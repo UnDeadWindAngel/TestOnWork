@@ -1,10 +1,12 @@
 <?php
     global $conn;
-    require_once("db.php");
+    require_once("db.php");//подключение к бд
     $mysql = $conn;
     $result = $mysql->query("SELECT * FROM `comments`");
-    while($comments = $result->fetch_assoc())
+    //запрос всех коментариев
+    while($comments = $result->fetch_assoc())//цикл на вывод коментариев
     {
+        //обработка полученных из запроса данных и вывод
         echo '
             <div class="row col-lg-12">
                 <div class="container-fluid col-1">
